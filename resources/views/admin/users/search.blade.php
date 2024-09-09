@@ -21,23 +21,24 @@
             </select>
         </div>
 
-        <div id="room_number_input" class="col-md-6 dynamic-input">
+        <!-- Dynamic Search Fields -->
+        <div id="room_number_input" class="col-md-6 dynamic-input" style="display:none;">
             <label for="room_number" class="form-label">Room Number</label>
             <input type="text" class="form-control" id="room_number" name="room_number">
         </div>
-        <div id="full_name_input" class="col-md-6 dynamic-input">
+        <div id="full_name_input" class="col-md-6 dynamic-input" style="display:none;">
             <label for="full_name" class="form-label">Full Name</label>
             <input type="text" class="form-control" id="full_name" name="full_name">
         </div>
-        <div id="email_input" class="col-md-6 dynamic-input">
+        <div id="email_input" class="col-md-6 dynamic-input" style="display:none;">
             <label for="email" class="form-label">Email</label>
             <input type="email" class="form-control" id="email" name="email">
         </div>
-        <div id="mobile_number_input" class="col-md-6 dynamic-input">
+        <div id="mobile_number_input" class="col-md-6 dynamic-input" style="display:none;">
             <label for="mobile_number" class="form-label">Mobile Number</label>
             <input type="text" class="form-control" id="mobile_number" name="mobile_number">
         </div>
-        <div id="country_input" class="col-md-6 dynamic-input">
+        <div id="country_input" class="col-md-6 dynamic-input" style="display:none;">
             <label for="country" class="form-label">Country</label>
             <select class="form-select" id="country" name="country">
                 <option value="">Choose...</option>
@@ -46,7 +47,7 @@
                 <option value="Nepal">Nepal</option>
             </select>
         </div>
-        <div id="religion_input" class="col-md-6 dynamic-input">
+        <div id="religion_input" class="col-md-6 dynamic-input" style="display:none;">
             <label for="religion" class="form-label">Religion</label>
             <select class="form-select" id="religion" name="religion">
                 <option value="">Choose...</option>
@@ -56,7 +57,7 @@
                 <option value="Christian">Christian</option>
             </select>
         </div>
-        <div id="gender_input" class="col-md-6 dynamic-input">
+        <div id="gender_input" class="col-md-6 dynamic-input" style="display:none;">
             <label for="gender" class="form-label">Gender</label>
             <select class="form-select" id="gender" name="gender">
                 <option value="">Choose...</option>
@@ -64,7 +65,7 @@
                 <option value="Female">Female</option>
             </select>
         </div>
-        <div id="course_type_input" class="col-md-6 dynamic-input">
+        <div id="course_type_input" class="col-md-6 dynamic-input" style="display:none;">
             <label for="course_type" class="form-label">Course Type</label>
             <select class="form-select" id="course_type" name="course_type">
                 <option value="">Choose...</option>
@@ -74,7 +75,7 @@
                 <option value="PHD">PHD</option>
             </select>
         </div>
-        <div id="department_input" class="col-md-6 dynamic-input">
+        <div id="department_input" class="col-md-6 dynamic-input" style="display:none;">
             <label for="department" class="form-label">Department</label>
             <select class="form-select" id="department" name="department">
                 <option value="">Choose...</option>
@@ -85,7 +86,7 @@
                 <option value="Economics">Economics</option>
             </select>
         </div>
-        <div id="course_year_input" class="col-md-6 dynamic-input">
+        <div id="course_year_input" class="col-md-6 dynamic-input" style="display:none;">
             <label for="course_year" class="form-label">Course Year</label>
             <select class="form-select" id="course_year" name="course_year">
                 <option value="">Choose...</option>
@@ -102,16 +103,18 @@
     </form>
 </div>
 
+<!-- jQuery for dynamic field toggling -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function() {
-        $('.dynamic-input').hide();
+        $('.dynamic-input').hide(); // Hide all fields initially
 
+        // When a search criteria is selected, show the corresponding field
         $('#search_criteria').on('change', function() {
             var selectedCriteria = $(this).val();
-            $('.dynamic-input').hide();
+            $('.dynamic-input').hide(); // Hide all fields
             if (selectedCriteria) {
-                $('#' + selectedCriteria + '_input').show();
+                $('#' + selectedCriteria + '_input').show(); // Show the selected input field
             }
         });
     });

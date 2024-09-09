@@ -73,9 +73,9 @@ Route::get('admin/users/{category}/{value?}', [UserController::class, 'listByCat
 //Routes for download pdf
 Route::get('admin/users/pdf/{id}', [UserController::class, 'downloadPDF'])->name('admin.users.pdf');
 
-// User Search
-Route::get('/admin/users/search', [SearchController::class, 'showSearchForm'])->name('search.form');
-Route::get('/admin/users/search/results', [SearchController::class, 'search'])->name('search');
+// Route to display the search
+Route::get('admin/users/search', [SearchController::class, 'showSearchForm'])->name('search.form');
+Route::get('admin/users/search/results', [SearchController::class, 'search'])->name('search');
 
 
 

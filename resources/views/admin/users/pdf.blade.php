@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Details PDF</title>
+    <title>User Details</title>
     <style>
         /* General Styling for A4 PDF */
         body {

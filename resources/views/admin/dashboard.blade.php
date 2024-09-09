@@ -263,7 +263,7 @@
                     <a href="{{ route('admin.users.list', ['category' => 'course_type', 'value' => 'BSC']) }}" class="card">
                         <div class="card-body">
                             <h5>BSC</h5>
-                            <p>{{ $cstStudents }}</p>
+                            <p>{{ $bscStudents }}</p>
                         </div>
                     </a>
                 </div>

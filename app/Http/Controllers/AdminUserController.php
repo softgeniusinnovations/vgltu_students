@@ -19,6 +19,8 @@ class AdminUserController extends Controller
         return view('admin.users.index', compact('users', 'category', 'value'));
     }
 
+
+
     // View user details
     public function view($id)
     {
@@ -29,10 +31,21 @@ class AdminUserController extends Controller
 
         return view('admin.users.view', compact('user'));
     }
+    
     public function downloadPDF($id)
     {
+        // Find the user by ID
         $user = User::find($id);
+
+        // If the user is not found, return a 404 response or custom error page
+        if (!$user) {
+            return abort(404, 'User Not Found');
+        }
+
+        // Generate the PDF (using a package like DomPDF)
         $pdf = PDF::loadView('admin.users.pdf', compact('user'));
+
+        // Return the generated PDF for download
         return $pdf->download('user_details.pdf');
     }
 
