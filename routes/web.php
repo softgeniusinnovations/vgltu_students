@@ -61,6 +61,12 @@ Route::post('admin/users/update/{id}', [AdminUserController::class, 'update'])->
 // Route to delete a user
 Route::delete('admin/users/delete/{id}', [UserController::class, 'destroy'])->name('admin.users.delete');
 
+//Find User
+Route::get('/admin/users/country/{country}', [AdminDashboardController::class, 'showUsersByCountry']);
+Route::get('/admin/users/religion/{religion}', [AdminDashboardController::class, 'showUsersByReligion']);
+Route::get('/admin/users/department/{department}', [AdminDashboardController::class, 'showUsersByDepartment']);
+Route::get('/admin/users/course/{course_type}', [AdminDashboardController::class, 'showUsersByCourse']);
+
 // Routes for users by category
 Route::get('admin/users/{category}/{value?}', [UserController::class, 'listByCategory'])->name('admin.users.list');
 

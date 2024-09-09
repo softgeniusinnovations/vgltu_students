@@ -57,14 +57,14 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'mobile_number' => ['required', 'string', 'max:15'],
             'room_number' => ['required', 'string', 'max:10'],
-            'photo' => ['required', 'image', 'mimes:jpeg,png,jpg,gif', 'max:4096'], // Validate the photo
+            'photo' => ['required', 'image', 'mimes:jpeg,png,jpg,gif', 'max:10240'], // Validate the photo
             'country' => ['required', 'in:Bangladesh,India,Nepal'],
             'address' => ['required', 'string', 'max:255'],
             'religion' => ['required', 'in:Muslim,Hindu,Boddho,Cristan'],
             'gender' => ['required', 'in:Male,Female'],
             'date_of_birth' => ['required', 'date'],
             'course_type' => ['required', 'in:Language,BSC,MSC,PHD'],
-            'department' => ['required', 'in:Automobile,Forestry,Mechanical,Computer Science and Technology,Economics'],
+            'department' => ['required', 'in:Prepetory Language Course,Automobile,Forestry,Mechanical,Computer Science and Technology,Economics'],
             'course_year' => ['required', 'in:1st Year,2nd Year,3rd Year,Final Year'],
         ]);
     }

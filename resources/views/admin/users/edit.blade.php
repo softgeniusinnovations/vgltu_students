@@ -70,9 +70,14 @@
                 <input type="text" name="room_number" id="room_number" value="{{ $user->room_number }}" required>
             </div>
 
+            <!-- Country select dropdown -->
             <div class="form-group">
                 <label for="country">Country:</label>
-                <input type="text" name="country" id="country" value="{{ $user->country }}" required>
+                <select class="form-control" id="country" name="country" required>
+                    <option value="Bangladesh" {{ $user->country == 'Bangladesh' ? 'selected' : '' }}>Bangladesh</option>
+                    <option value="India" {{ $user->country == 'India' ? 'selected' : '' }}>India</option>
+                    <option value="Nepal" {{ $user->country == 'Nepal' ? 'selected' : '' }}>Nepal</option>
+                </select>
             </div>
 
             <div class="form-group">
@@ -88,9 +93,15 @@
                 </select>
             </div>
 
+            <!-- Religion select dropdown -->
             <div class="form-group">
                 <label for="religion">Religion:</label>
-                <input type="text" name="religion" id="religion" value="{{ $user->religion }}" required>
+                <select class="form-control" id="religion" name="religion" required>
+                    <option value="Muslim" {{ $user->religion == 'Muslim' ? 'selected' : '' }}>Muslim</option>
+                    <option value="Hindu" {{ $user->religion == 'Hindu' ? 'selected' : '' }}>Hindu</option>
+                    <option value="Boddho" {{ $user->religion == 'Boddho' ? 'selected' : '' }}>Boddho</option>
+                    <option value="Cristan" {{ $user->religion == 'Cristan' ? 'selected' : '' }}>Cristan</option>
+                </select>
             </div>
 
             <div class="form-group">
@@ -98,19 +109,39 @@
                 <input type="date" name="date_of_birth" id="date_of_birth" value="{{ $user->date_of_birth }}" required>
             </div>
 
+            <!-- Course Type select dropdown -->
             <div class="form-group">
                 <label for="course_type">Course Type:</label>
-                <input type="text" name="course_type" id="course_type" value="{{ $user->course_type }}" required>
+                <select class="form-control" id="course_type" name="course_type" required>
+                    <option value="Language" {{ $user->course_type == 'Language' ? 'selected' : '' }}>Language</option>
+                    <option value="BSC" {{ $user->course_type == 'BSC' ? 'selected' : '' }}>BSC</option>
+                    <option value="MSC" {{ $user->course_type == 'MSC' ? 'selected' : '' }}>MSC</option>
+                    <option value="PHD" {{ $user->course_type == 'PHD' ? 'selected' : '' }}>PHD</option>
+                </select>
             </div>
 
+            <!-- Department select dropdown -->
             <div class="form-group">
                 <label for="department">Department:</label>
-                <input type="text" name="department" id="department" value="{{ $user->department }}" required>
+                <select class="form-control" id="department" name="department" required>
+                    <option value="Prepetory Language Course" {{ $user->department == 'Prepetory Language Course' ? 'selected' : '' }}>Prepetory Language Course</option>
+                    <option value="Automobile" {{ $user->department == 'Automobile' ? 'selected' : '' }}>Automobile</option>
+                    <option value="Forestry" {{ $user->department == 'Forestry' ? 'selected' : '' }}>Forestry</option>
+                    <option value="Mechanical" {{ $user->department == 'Mechanical' ? 'selected' : '' }}>Mechanical</option>
+                    <option value="Computer Science and Technology" {{ $user->department == 'Computer Science and Technology' ? 'selected' : '' }}>Computer Science and Technology</option>
+                    <option value="Economics" {{ $user->department == 'Economics' ? 'selected' : '' }}>Economics</option>
+                </select>
             </div>
 
+            <!-- Course Year select dropdown -->
             <div class="form-group">
                 <label for="course_year">Course Year:</label>
-                <input type="text" name="course_year" id="course_year" value="{{ $user->course_year }}" required>
+                <select class="form-control" id="course_year" name="course_year" required>
+                    <option value="1st Year" {{ $user->course_year == '1st Year' ? 'selected' : '' }}>1st Year</option>
+                    <option value="2nd Year" {{ $user->course_year == '2nd Year' ? 'selected' : '' }}>2nd Year</option>
+                    <option value="3rd Year" {{ $user->course_year == '3rd Year' ? 'selected' : '' }}>3rd Year</option>
+                    <option value="Final Year" {{ $user->course_year == 'Final Year' ? 'selected' : '' }}>Final Year</option>
+                </select>
             </div>
 
             <div class="form-group">
@@ -127,4 +158,5 @@
         </form>
     </div>
 </div>
+
 @endsection

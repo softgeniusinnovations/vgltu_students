@@ -98,7 +98,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="#" onclick="toggleMenu('department-menu')">Students by Department</a>
                 <ul class="dropdown-menu" id="department-menu">
-                    <li><a class="nav-link" href="{{ route('admin.users.list', ['category' => 'department', 'value' => 'Language']) }}">Language</a></li>
+                    <li><a class="nav-link" href="{{ route('admin.users.list', ['category' => 'department', 'value' => 'Prepetory Language Course']) }}">Language</a></li>
                     <li><a class="nav-link" href="{{ route('admin.users.list', ['category' => 'department', 'value' => 'Automobile']) }}">Automobile</a></li>
                     <li><a class="nav-link" href="{{ route('admin.users.list', ['category' => 'department', 'value' => 'Forestry']) }}">Forestry</a></li>
                     <li><a class="nav-link" href="{{ route('admin.users.list', ['category' => 'department', 'value' => 'Mechanical']) }}">Mechanical</a></li>
@@ -202,7 +202,7 @@
                     <a href="{{ route('admin.users.list', ['category' => 'department', 'value' => 'Prepetory Language Course']) }}" class="card">
                         <div class="card-body">
                             <h5>Language</h5>
-                            <p>{{ $languageStudents }}</p>
+                            <p>{{ $language }}</p>
                         </div>
                     </a>
                 </div>

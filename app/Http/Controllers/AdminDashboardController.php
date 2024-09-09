@@ -7,7 +7,29 @@ use App\Models\User;
 
 class AdminDashboardController extends Controller
 {
-    public function index(Request $request){
+    
+    public function showUsersByCountry($country){
+        $users = User::where('country', $country)->get();
+        return view('admin.user_details', compact('users'));
+    }
+
+    public function showUsersByReligion($religion){
+        $users = User::where('religion', $religion)->get();
+        return view('admin.user_details', compact('users'));
+    }
+
+    public function showUsersByDepartment($department){
+        $users = User::where('department', $department)->get();
+        return view('admin.user_details', compact('users'));
+    }
+
+    public function showUsersByCourse($course_type){
+        $users = User::where('course_type', $course_type)->get();
+        return view('admin.user_details', compact('users'));
+    }
+
+    public function index(Request $request)
+    {
         // Fetch data from the database using the User model
         $totalStudents = User::count();
         $totalBangladeshiStudents = User::where('country', 'Bangladesh')->count();
@@ -21,7 +43,7 @@ class AdminDashboardController extends Controller
         $cristanStudents = User::where('religion', 'Cristan')->count();
 
         // Students by department
-        $languageStudents = User::where('course_type', 'Language')->count();
+        $language = User::where('department', 'Prepetory Language Course')->count();
         $automobileStudents = User::where('department', 'Automobile')->count();
         $forestryStudents = User::where('department', 'Forestry')->count();
         $mechanicalStudents = User::where('department', 'Mechanical')->count();
@@ -38,8 +60,10 @@ class AdminDashboardController extends Controller
         return view('admin.dashboard', compact(
             'totalStudents', 'totalBangladeshiStudents', 'totalIndianStudents', 'totalNepaliStudents',
             'muslimStudents', 'hinduStudents', 'boddhoStudents', 'cristanStudents',
-            'languageStudents', 'automobileStudents', 'forestryStudents', 'mechanicalStudents', 'cstStudents', 'economicsStudents',
+            'language', 'automobileStudents', 'forestryStudents', 'mechanicalStudents', 'cstStudents', 'economicsStudents',
             'languageStudents', 'bscStudents', 'mscStudents', 'phdStudents'
         ));
+        
     }
+    
 }
