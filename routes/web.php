@@ -9,6 +9,9 @@ use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\PhotoController;
+use App\Http\Controllers\VideoController;
+use App\Http\Controllers\StudentController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -76,6 +79,22 @@ Route::get('admin/users/pdf/{id}', [UserController::class, 'downloadPDF'])->name
 // Route to display the search
 Route::get('admin/users/search', [SearchController::class, 'showSearchForm'])->name('search.form');
 Route::get('admin/users/search/results', [SearchController::class, 'search'])->name('search');
+
+//photo Post
+Route::prefix('admin')->group(function() {
+    Route::resource('photos', PhotoController::class);
+});
+
+//Video Post
+
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::resource('videos', VideoController::class);
+});
+
+//Students Upload
+Route::prefix('admin')->group(function () {
+    Route::resource('students', StudentController::class);
+});
 
 
 

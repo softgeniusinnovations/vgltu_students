@@ -115,6 +115,15 @@
                     <li><a class="nav-link" href="{{ route('admin.users.list', ['category' => 'course_type', 'value' => 'PHD']) }}">PHD</a></li>
                 </ul>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('admin/photos') }}">Upload Photo</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('admin/videos') }}">Upload Video</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('admin/students') }}">Upload Old Student</a>
+            </li>
         </ul>
     </div>
 
