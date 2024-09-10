@@ -78,7 +78,8 @@ Route::get('admin/users/pdf/{id}', [UserController::class, 'downloadPDF'])->name
 
 // Route to display the search
 Route::get('admin/users/search', [SearchController::class, 'showSearchForm'])->name('search.form');
-Route::get('admin/users/search/results', [SearchController::class, 'search'])->name('search');
+Route::get('/admin/users/search/results', [SearchController::class, 'search'])->name('search');
+
 
 //photo Post
 Route::prefix('admin')->group(function() {

@@ -15,19 +15,18 @@ class SearchController extends Controller
     // Perform the search based on selected criteria
     public function search(Request $request)
     {
-        dd($request->all());
-        $criteria = $request->input('search_criteria'); // Get selected criteria
-        $searchTerm = $request->input($criteria); // Get the search term for the selected criteria
-
+        $criteria = $request->input('search_criteria'); 
+        $searchTerm = $request->input($criteria); 
+    
         $query = User::query();
-
+    
         // Perform search only if criteria and search term are provided
         if ($criteria && $searchTerm) {
             $query->where($criteria, 'LIKE', '%' . $searchTerm . '%');
         }
-
-        $users = $query->get(); // Fetch all matching users
-
+    
+        $users = $query->get(); 
+    
         return view('admin.users.search_result', compact('users'));
     }
 }

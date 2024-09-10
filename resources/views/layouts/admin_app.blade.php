@@ -33,9 +33,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('admin/dashboard') }}">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('admin/users/search') }}">Search User</a>
-                        </li>
 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="studentsByNationalityDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

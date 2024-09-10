@@ -16,10 +16,12 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    protected $table = 'users';
+    
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        'room_number', 'full_name', 'email', 'mobile_number',
+        'country', 'religion', 'gender', 'course_type', 
+        'department', 'course_year',
     ];
 
     /**
@@ -43,5 +45,8 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+        
     }
+
+     // Ensure the table name is correct
 }
